@@ -8,3 +8,27 @@ Useful in combination with enums is Rust's "pattern matching" facility, which ma
 
 - [Enums](https://doc.rust-lang.org/book/ch06-00-enums.html)
 - [Pattern syntax](https://doc.rust-lang.org/book/ch18-03-pattern-syntax.html)
+
+there are two kind of ip addressses v4,v6
+
+enum IpAddrKind {
+    V4,
+    V6,
+}
+IpAddrKind is now a custom data type that we can use elsewhere in our code.
+
+Enum Values
+We can create instances of each of the two variants of IpAddrKind like this:
+
+    let four = IpAddrKind::V4;
+    let six = IpAddrKind::V6;
+
+Enums can be passed to functions:
+
+fn route(ip_kind: IpAddrKind) {}
+
+we can call this function with either variant:
+
+
+    route(IpAddrKind::V4);
+    route(IpAddrKind::V6);
